@@ -1,4 +1,3 @@
-package breakThisMathafacker;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -35,5 +34,9 @@ public class Map {
 				}
 			}
 		}
+	}
+	
+	public void setBrickValue(int value, int row, int col) {
+		map[row][col] = value;
 	}
 }
