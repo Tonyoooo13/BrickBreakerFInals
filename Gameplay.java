@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import javax.swing.Timer;
 
@@ -61,6 +62,10 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		timer.start();
 		if(play) {
+			if(new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))) {
+				ballYdir = -ballYdir;
+			}
+			
 			ballPosX += ballXdir;
 			ballPosY += ballYdir;
 			if(ballPosX < 0) {
@@ -76,15 +81,15 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 		
 		repaint();
 	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {}
 	
 	@Override
 	public void keyTyped(KeyEvent e) {}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public void keyReleased(KeyEvent e) {}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_RIGHT);{
 			if(playerX >=600) {
 				playerX = 600;
@@ -109,7 +114,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 	public void moveLeft() {
 		play = true;
 		playerX-=20;
-	}
-}
+	}	
+}	
 
 	
