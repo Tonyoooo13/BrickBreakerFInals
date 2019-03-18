@@ -1,0 +1,32 @@
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+
+public class Map {
+	public int map[][];
+	public int brickWidth;
+	public int brickHeight;
+	
+	public Map(int row, int col) {
+		map = new int[row][col];
+		for(int i = 0; i < map.length; i++) {
+			for(int j = 0; j < map[0].length; j++ ) {
+				map[i][j] = 1;
+			}
+		}
+		
+		brickWidth = 540/col;
+		brickHeight = 150/col;
+	}
+	
+	public void draw(Graphics2D g) {
+		for(int i = 0; i < map.length; i++) {
+			for(int j = 0; j < map[0].length; j++ ) {
+				if(map[i][j]> 0) {
+					g.setColor(Color.orange);
+					g.fillRect(j * brickWidth + 90, i * brickHeight + 50, brickWidth, brickHeight);
+				}
+			}
+		}
+	}
+}
