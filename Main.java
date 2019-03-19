@@ -7,7 +7,7 @@ public class Main {
 		Gameplay gPlay = new Gameplay();
 
 		obj.setBounds(10, 10, 700, 600);
-		obj.setTitle("BOOM SHAKALAKA");
+		obj.setTitle("DESTROY ALL BRICKS");
 		obj.setResizable(false);
 		obj.setVisible(true);
 		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

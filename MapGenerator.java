@@ -3,6 +3,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
+
 public class Map {
 	public int map[][];
 	public int brickWidth;
@@ -39,4 +40,5 @@ public class Map {
 	public void setBrickValue(int value, int row, int col) {
 		map[row][col] = value;
 	}
+
 }
