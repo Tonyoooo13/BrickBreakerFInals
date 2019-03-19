@@ -140,18 +140,18 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener  {
 	public void keyPressed(KeyEvent e) {
 
 		if(e.getKeyCode() == KeyEvent.VK_D){
-			// if(playerX >=600) {
-			// 	playerX = 600;
-			// }else {
+			if(playerX >=600) {
+				playerX = 600;
+			}else {
 				moveRight();
-			// }
+			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_A){
-			// if(playerX < 10) {
-			// 	playerX = 10;
-			// }else {
+			if(playerX < 10) {
+				playerX = 10;
+			}else {
 				moveLeft();
-			// }
+			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ENTER){
 			if(!play){
