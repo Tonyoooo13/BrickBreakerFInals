@@ -28,10 +28,10 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener  {
 	private int ballXdir = -1;
 	private int ballYdir = -2;
 	
-	public Map map;
+	public MapGenerator map;
 	
 	public Gameplay( ) {
-		map = new Map(3,7);
+		map = new MapGenerator(3,7);
 		addKeyListener(this);
 		setFocusable(true);
 		setFocusTraversalKeysEnabled(false);
@@ -138,19 +138,20 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener  {
 	public void keyReleased(KeyEvent e) {}
 	
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_D);{
-			if(playerX >=600) {
-				playerX = 600;
-			}else {
+
+		if(e.getKeyCode() == KeyEvent.VK_D){
+			// if(playerX >=600) {
+			// 	playerX = 600;
+			// }else {
 				moveRight();
-			}
+			// }
 		}
-		if(e.getKeyCode() == KeyEvent.VK_A);{
-			if(playerX < 10) {
-				playerX = 10;
-			}else {
+		if(e.getKeyCode() == KeyEvent.VK_A){
+			// if(playerX < 10) {
+			// 	playerX = 10;
+			// }else {
 				moveLeft();
-			}
+			// }
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ENTER){
 			if(!play){
@@ -162,20 +163,22 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener  {
 				playerX = 310;
 				score = 0;
 				totalBricks = 21;
-				map = new Map(3, 7);
-				
-				repaint(); 
+				map = new MapGenerator(3, 7);
 			}
 		}
+
+		repaint(); 
 	}
 	
 	public void moveRight() {
 		play = true;
-		playerX+=20;
+		playerX = playerX + 20;
+		repaint();
 	}
 	public void moveLeft() {
 		play = true;
-		playerX-=20;
+		playerX = playerX - 20;
+		repaint();
 	}
 
 }

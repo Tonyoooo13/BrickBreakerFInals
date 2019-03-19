@@ -4,12 +4,12 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 
-public class Map {
+public class MapGenerator {
 	public int map[][];
 	public int brickWidth;
 	public int brickHeight;
 	
-	public Map(int row, int col) {
+	public MapGenerator(int row, int col) {
 		map = new int[row][col];
 		for(int i = 0; i < map.length; i++) {
 			for(int j = 0; j < map[0].length; j++ ) {
